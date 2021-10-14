@@ -62,7 +62,7 @@ html body {
     margin: auto;
     margin-top: 14.375em;
     padding: 0;
-    width: 50em;
+    width: 60%;
 }
 .h1HeaderContainer h1 {
     margin: 0;
@@ -76,7 +76,7 @@ html body {
 }
 .pHeaderContainer {
     margin: auto;
-    width: 50em;
+    width: 60%;
 }
 .pHeaderContainer p{
     margin: 0;
@@ -109,7 +109,7 @@ html body {
 }
 .h1Body1Container {
     margin: auto;
-    margin-top: 8em;
+    margin-top: 9%;
 }
 .h1Body1Container h1 {
     margin: 0;
@@ -119,7 +119,7 @@ html body {
 .pBody1Container {
     margin: auto;
     margin-bottom: 1.25em;
-    width: 49em;
+    width: 59%;
 }
 .pBody1Container p {
     margin: 0;
@@ -152,7 +152,7 @@ html body {
 }
 .h1Body2Container {
     margin: auto;
-    margin-top: 8em;
+    margin-top: 9%;
 }
 .h1Body2Container h1{
     margin: 0;
@@ -162,9 +162,8 @@ html body {
 /* Body 2 icon */
 .body2-icon {
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
 }
 .gem-icon {
     display: flex;
@@ -194,6 +193,7 @@ html body {
     margin: auto;
     text-align: center;
     font-weight: normal;
+    width: 100%;
 }
 .pBody2-iconContainer p{
     font-family: Merriweather;
@@ -204,41 +204,50 @@ html body {
     color: #6c757d;
     line-height: 1.5em;
     font-size: 1em;
-    width: 17em;
+    width: 80%;
 }
 /* Body 3 */
 .body3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-}
-.body3 img {
-    margin:auto;
-    height: 250px;
-    width: 505px;
+    height: auto;
 }
 .imgContainer {
-    height: 250px;
-    width: 505px;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+.body3 img {
+    display: block;
+    width: 100%;
 }
 .overlay {
-    position: relative;
+    position: absolute;
     background: rgba(244, 98, 58, 0.9);
-    height: 250px;
-    width: 505px;
-    bottom: 255px;
-    left: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0;
     opacity: 0;
 }
 .overlayT1 {
-    text-align: center;
-    padding-top: 90px;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    top:-25px;
+    justify-content: center;
+    align-items: center;
     font-size: 0.85em;
     color: rgba(255, 255, 255, 0.5)
 }
 .overlayT2 {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     font-family: Merriweather;
-    text-align: center;
-    padding-top: 5px;
     font-size: 1.2rem;
     color: white;
 }
@@ -253,13 +262,15 @@ html body {
     display: grid;
 }
 .h2Body4Container {
+    width: 58%;
     margin: auto;
-    margin-top: 6.5em;
+    margin-top: 7.5%;
 }
 .h2Body4Container h2 {
     color: #fff;
-    font-size: 2rem;
-    font-weight: normal;  
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
 }
 .body4Button {
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -280,7 +291,7 @@ html body {
 }
 .h2FooterContainer {
     margin: auto;
-    margin-top: 8em;
+    margin-top: 9%;
 }
 .h2FooterContainer h2 {
     margin: 0;
@@ -290,7 +301,7 @@ html body {
 .pFooterContainer {
     margin: auto;
     margin-bottom: 1.25em;
-    width: 37em;
+    width: 47%;
 }
 .pFooterContainer p {
     margin: 0;
@@ -301,22 +312,21 @@ html body {
     line-height: 1.5em;
 }
 .contactForm {
-    display: grid;
-    margin: auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .contactForm input {
-    width: 30em;
+    width: 40%;
     height: 3em;
     border: 1px solid rgba(40, 44, 48, 0.5);
     border-radius: 5px;
     margin-bottom: 2em;
     padding-left: 20px;
     font-size: 1.1em;
-}
-#message {
-    padding-top: 0;
-    position: relative;
-    height: 200px;
 }
 .contactForm input:focus {
     outline: 5px solid rgba(255, 43, 43, 0.2);
@@ -327,7 +337,45 @@ html body {
     top: 2px;
     color: black;
 }
-#message::placeholder {
+.contactForm input:focus::placeholder {
     position: relative;
-    top: -70px;
+    top: -17px;
+    font-size: 0.7em;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 0.1s ease;
+}
+.footerButton {
+    margin: auto;
+    margin-bottom: 2.5em;
+    border:none;
+    border-radius: 60px;
+    height: 60px;
+    width: 41%;
+    background-color: rgb(255, 105, 50);
+    font-weight: bold;
+    color: white;
+}
+.phone-icon {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.45);
+}
+.authPhone{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: lighter;
+    font-family: Merriweather Sans;
+    color: rgba(0, 0, 0, 0.6);
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    font-family: Merriweather Sans;
+    font-size: 0.7em;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.5);
 }
